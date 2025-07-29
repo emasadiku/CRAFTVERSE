@@ -92,8 +92,6 @@ footer {
 }
 
 /* Default styles (desktop/laptop first) already set above */
-
-/* Medium devices (tablets, 768px - 1024px) */
 @media (max-width: 1024px) {
   .quiz-box {
     padding: 1.8rem;
@@ -116,6 +114,22 @@ footer {
 
   form p {
     font-size: 1.1rem;
+  }
+
+  .footer-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .footer-grid > div {
+    flex: 1 1 45%;
+    min-width: 200px;
+  }
+
+  .footer-about img {
+    width: 220px;
   }
 }
 
@@ -150,7 +164,39 @@ footer {
   form p {
     font-size: 1rem;
   }
+   .footer-grid {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-grid > div {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .footer-top {
+    padding: 1rem;
+  }
+
+  .footer-about {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .footer-about img {
+    width: 200px;
+  }
+
+  .footer-bottom {
+    font-size: 0.85rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .footer-bottom button {
+    font-size: 0.85rem;
+  }
 }
+
 
 /* Extra small devices (narrow mobile screens under 480px) */
 @media (max-width: 480px) {
@@ -170,8 +216,98 @@ footer {
   .back-button {
     font-size: 0.95rem;
   }
+   .footer-about img {
+    width: 180px;
+  }
+
+  .footer-grid > div h4 {
+    font-size: 1rem;
+  }
+
+  .footer-grid > div ul li {
+    font-size: 0.9rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+@media (max-width: 1024px) {
+  .navbar-brand img {
+    width: 250px;
+    height: auto;
+  }
+
+  .navbar-nav {
+    gap: 0.5rem;
+  }
+
+  .navbar-nav .nav-item {
+    text-align: center;
+  }
+
+  .navbar .container-fluid {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-collapse {
+    width: 100%;
+  }
+
+  .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+
+  .navbar .bi-bag-heart-fill {
+    font-size: 1.3rem;
+  }
 }
 
+/* Mobile */
+@media (max-width: 767px) {
+  .navbar-brand img {
+    width: 180px;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .navbar-toggler {
+    align-self: flex-end;
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .navbar .bi-bag-heart-fill {
+    font-size: 1.2rem;
+  }
+
+  .navbar .container,
+  .navbar .container-fluid {
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Extra Small */
+@media (max-width: 480px) {
+  .nav-link {
+    font-size: 0.95rem;
+  }
+
+  .navbar .bi-bag-heart-fill {
+    font-size: 1.1rem;
+  }
+}
 
   </style>
 </head>
