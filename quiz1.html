@@ -14,20 +14,21 @@
     --accent:#BD4C65;
   }
 
-  *{ box-sizing:border-box; }
-  img{ max-width:100%; height:auto; display:block; }
+  *{ 
+    box-sizing:border-box; }
+  img{ 
+    max-width:100%; 
+    height:auto; 
+    display:block; }
 
-  /* Headings */
   h2{
     font-family:'Lora', serif;
     color:var(--brand);
     text-align:center;
-    /* Scales between ~20px and ~32px based on viewport */
     font-size:clamp(1.25rem, 1.5vw + 1rem, 2rem);
     line-height:1.25;
   }
 
-  /* Back link */
   .back-button{
     background:transparent;
     color:var(--accent);
@@ -41,9 +42,11 @@
     transition:transform .15s ease, background-color .15s ease, color .15s ease;
     font-size:clamp(.9rem, .6vw + .8rem, 1rem);
   }
-  .back-button:hover{ background:var(--accent); color:#fff; transform:translateY(-1px); }
+  .back-button:hover{ 
+    background:var(--accent); 
+    color:#fff; 
+    transform:translateY(-1px); }
 
-  /* Quiz container */
   .quiz-box{
     background:#fff;
     border-radius:12px;
@@ -58,7 +61,6 @@
     font-weight:600;
   }
 
-  /* Form options: larger tap targets on mobile */
   .quiz-box label{
     display:flex;
     align-items:center;
@@ -76,7 +78,6 @@
     height:1.1rem;
   }
 
-  /* Buttons */
   button{
     background:var(--accent);
     color:#fff;
@@ -99,8 +100,14 @@
   }
 
   /* Navbar & Footer base */
-  header, footer{ width:100%; margin:0; padding:0; }
-  .navbar{ width:100%; }
+  header, footer{ width:100%; 
+    margin:0; 
+    padding:0; }
+
+  .navbar{ 
+    width:100%; 
+  }
+
   .footer-top, .footer-bottom{
     width:100%;
     padding:1rem 2rem;
@@ -112,58 +119,83 @@
     justify-content:space-between;
     gap:1.25rem 2rem;
   }
-  .footer-grid ul{ list-style:none; margin:0; padding:0; }
+  .footer-grid ul{ 
+    list-style:none; 
+    margin:0; 
+    padding:0; }
+
   .footer-grid li{ margin-bottom:.35rem; }
   .footer-about{ margin-bottom:1rem; }
+
   .footer-bottom{
     text-align:center;
     font-size:.95rem;
     padding-top:.75rem;
   }
 
-  /* Utilities for container breathing room */
-  .container{ padding-left:1rem; padding-right:1rem; }
+  .container{ 
+    padding-left:1rem; 
+    padding-right:1rem; 
+  }
 
-  /* =====================
-     Breakpoints
-     ===================== */
 
-  /* ≤ 1024px (lg-) */
   @media (max-width: 1024px){
-    .navbar-brand img{ width:220px; height:auto; }
+    .navbar-brand img{ 
+      width:220px; 
+      height:auto; }
 
-    .navbar-nav{ gap:.5rem; }
-    .navbar-nav .nav-item{ text-align:center; }
-    .nav-link{ padding:.5rem 1rem; font-size:1rem; }
+    .navbar-nav{ 
+      gap:.5rem; 
+    }
+
+    .navbar-nav .nav-item{ 
+      text-align:center; 
+    }
+
+    .nav-link{ 
+      padding:.5rem 1rem; 
+      font-size:1rem; }
+
     .navbar .bi-bag-heart-fill{ font-size:1.3rem; }
 
     .quiz-box{ max-width:600px; }
   }
 
-  /* ≤ 768px (md-) */
   @media (max-width: 768px){
     .navbar-nav{
       flex-direction:column;
       align-items:flex-start;
       gap:.4rem;
     }
-    .navbar-toggler{ align-self:flex-end; margin-bottom:.5rem; }
-    .nav-link{ font-size:1rem; padding:.4rem .8rem; }
-    .navbar .container, .navbar .container-fluid{ padding:.5rem 1rem; }
+    .navbar-toggler{ 
+      align-self:flex-end; 
+      margin-bottom:.5rem; }
 
-    /* Footer stacks */
-    .footer-grid{ flex-direction:column; align-items:flex-start; }
-    .footer-grid > div{ width:100%; }
-    .footer-about{ text-align:center; margin-bottom:1rem; }
+    .nav-link{ 
+      font-size:1rem; 
+      padding:.4rem .8rem; 
+    }
+    .navbar .container, .navbar .container-fluid{ 
+      padding:.5rem 1rem; 
+    }
 
-    /* Quiz: mobile-first ergonomics */
+    .footer-grid{ 
+      flex-direction:column; 
+      align-items:flex-start; 
+    }
+    .footer-grid > div{ 
+      width:100%; 
+    }
+    .footer-about{ 
+      text-align:center; 
+      margin-bottom:1rem; }
+
     .back-button{ width:100%; text-align:center; margin-bottom:1rem; }
     .quiz-box{ max-width:540px; }
     .quiz-box label{ padding:.7rem .9rem; }
     .quiz-box button{ width:100%; }
   }
 
-  /* ≤ 576px (sm-) */
   @media (max-width: 576px){
     .nav-link{ font-size:.98rem; }
     .navbar .bi-bag-heart-fill{ font-size:1.15rem; }
@@ -178,7 +210,6 @@
     .footer-top img{ margin-inline:auto; max-width:240px; }
   }
 
-  /* ≤ 480px (xs) */
   @media (max-width: 480px){
     .nav-link{ font-size:.95rem; }
     .navbar .bi-bag-heart-fill{ font-size:1.1rem; }

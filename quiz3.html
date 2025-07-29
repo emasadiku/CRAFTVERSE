@@ -9,162 +9,219 @@
       <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
             <link rel="stylesheet" href="indexStyle.css">
 
-  <style>
+      <style>
+  :root{
+    --brand:#007A82;
+    --accent:#BD4C65;
+  }
 
-h2 {
-      font-family: 'Lora', serif;
-      color: #007A82;
-      text-align: center;
+  *{ 
+    box-sizing:border-box; }
+  img{ 
+    max-width:100%; 
+    height:auto; 
+    display:block; }
+
+  h2{
+    font-family:'Lora', serif;
+    color:var(--brand);
+    text-align:center;
+    font-size:clamp(1.25rem, 1.5vw + 1rem, 2rem);
+    line-height:1.25;
+  }
+
+  .back-button{
+    background:transparent;
+    color:var(--accent);
+    border:2px solid var(--accent);
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:bold;
+    padding:.5rem 1rem;
+    display:inline-block;
+    margin-bottom:1rem;
+    transition:transform .15s ease, background-color .15s ease, color .15s ease;
+    font-size:clamp(.9rem, .6vw + .8rem, 1rem);
+  }
+  .back-button:hover{ 
+    background:var(--accent); 
+    color:#fff; 
+    transform:translateY(-1px); }
+
+  .quiz-box{
+    background:#fff;
+    border-radius:12px;
+    padding:clamp(1rem, 2.2vw + .25rem, 2rem);
+    width:100%;
+    max-width:640px;
+    margin:1.5rem auto;
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+  }
+  .quiz-box p{
+    margin:.75rem 0 .5rem;
+    font-weight:600;
+  }
+
+  .quiz-box label{
+    display:flex;
+    align-items:center;
+    gap:.6rem;
+    padding:.65rem .9rem;
+    border:1px solid #e9ecef;
+    border-radius:10px;
+    margin-bottom:.5rem;
+    cursor:pointer;
+    line-height:1.25;
+  }
+  .quiz-box input[type="radio"]{
+    flex:0 0 auto;
+    width:1.1rem;
+    height:1.1rem;
+  }
+
+  button{
+    background:var(--accent);
+    color:#fff;
+    border:none;
+    border-radius:999px;
+    padding:.7rem 1.2rem;
+    margin-top:1rem;
+    cursor:pointer;
+    font-weight:600;
+  }
+  button:focus-visible, .back-button:focus-visible{
+    outline:3px solid #ffd3dc;
+    outline-offset:2px;
+  }
+
+  .result{
+    margin-top:1rem;
+    font-weight:bold;
+    color:var(--brand);
+  }
+
+  /* Navbar & Footer base */
+  header, footer{ width:100%; 
+    margin:0; 
+    padding:0; }
+
+  .navbar{ 
+    width:100%; 
+  }
+
+  .footer-top, .footer-bottom{
+    width:100%;
+    padding:1rem 2rem;
+    box-sizing:border-box;
+  }
+  .footer-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:1.25rem 2rem;
+  }
+  .footer-grid ul{ 
+    list-style:none; 
+    margin:0; 
+    padding:0; }
+
+  .footer-grid li{ margin-bottom:.35rem; }
+  .footer-about{ margin-bottom:1rem; }
+
+  .footer-bottom{
+    text-align:center;
+    font-size:.95rem;
+    padding-top:.75rem;
+  }
+
+  .container{ 
+    padding-left:1rem; 
+    padding-right:1rem; 
+  }
+
+
+  @media (max-width: 1024px){
+    .navbar-brand img{ 
+      width:220px; 
+      height:auto; }
+
+    .navbar-nav{ 
+      gap:.5rem; 
     }
 
-    .back-button {
-      background: transparent;
-      color: #BD4C65;
-      border: 2px solid #BD4C65;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 0.4rem 1rem;
-      display: inline-block;
-      margin-bottom: 20px;
+    .navbar-nav .nav-item{ 
+      text-align:center; 
     }
 
-    .quiz-box {
-      background: #fff;
-      border-radius: 12px;
-      padding: 2rem;
-      width: 100%;
-      max-width: 550px;
-      margin: 2rem auto;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    .nav-link{ 
+      padding:.5rem 1rem; 
+      font-size:1rem; }
+
+    .navbar .bi-bag-heart-fill{ font-size:1.3rem; }
+
+    .quiz-box{ max-width:600px; }
+  }
+
+  @media (max-width: 768px){
+    .navbar-nav{
+      flex-direction:column;
+      align-items:flex-start;
+      gap:.4rem;
+    }
+    .navbar-toggler{ 
+      align-self:flex-end; 
+      margin-bottom:.5rem; }
+
+    .nav-link{ 
+      font-size:1rem; 
+      padding:.4rem .8rem; 
+    }
+    .navbar .container, .navbar .container-fluid{ 
+      padding:.5rem 1rem; 
     }
 
-    button {
-      background: #BD4C65;
-      color: white;
-      border: none;
-      border-radius: 999px;
-      padding: 0.6rem 1.2rem;
-      margin-top: 1rem;
-      cursor: pointer;
+    .footer-grid{ 
+      flex-direction:column; 
+      align-items:flex-start; 
     }
-
-    .result {
-      margin-top: 1.5rem;
-      font-weight: bold;
-      color: #007A82;
+    .footer-grid > div{ 
+      width:100%; 
     }
+    .footer-about{ 
+      text-align:center; 
+      margin-bottom:1rem; }
 
-    /* Navbar & Footer General Styles */
-    header, footer {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-    }
+    .back-button{ width:100%; text-align:center; margin-bottom:1rem; }
+    .quiz-box{ max-width:540px; }
+    .quiz-box label{ padding:.7rem .9rem; }
+    .quiz-box button{ width:100%; }
+  }
 
-    .navbar {
-      width: 100%;
-    }
+  @media (max-width: 576px){
+    .nav-link{ font-size:.98rem; }
+    .navbar .bi-bag-heart-fill{ font-size:1.15rem; }
 
-    .footer-top, .footer-bottom {
-      width: 100%;
-      padding: 1rem 2rem;
-      box-sizing: border-box;
-    }
+    .quiz-box{ max-width:520px; }
+    .quiz-box label{ padding:.7rem .8rem; }
+    .quiz-box input[type="radio"]{ width:1.15rem; height:1.15rem; }
+    .result{ font-size:1rem; }
 
-    .footer-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 2rem;
-    }
+    .footer-top{ padding:1rem; }
+    .footer-bottom{ font-size:.9rem; }
+    .footer-top img{ margin-inline:auto; max-width:240px; }
+  }
 
-    .footer-about {
-      margin-bottom: 1rem;
-    }
+  @media (max-width: 480px){
+    .nav-link{ font-size:.95rem; }
+    .navbar .bi-bag-heart-fill{ font-size:1.1rem; }
 
-    .footer-bottom {
-      text-align: center;
-      font-size: 0.9rem;
-      padding-top: 1rem;
-    }
+    .navbar-brand img{ width:210px; height:auto; }
+    .quiz-box{ padding:1rem; border-radius:10px; }
+    h2{ font-size:1.25rem; }
 
-    /* Responsive Styles */
-    @media (max-width: 1024px) {
-      .navbar-brand img {
-        width: 220px;
-        height: auto;
-      }
-
-      .navbar-nav {
-        gap: 0.5rem;
-      }
-
-      .navbar-nav .nav-item {
-        text-align: center;
-      }
-
-      .nav-link {
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
-      }
-
-      .navbar .bi-bag-heart-fill {
-        font-size: 1.3rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .navbar-nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.4rem;
-      }
-
-      .navbar-toggler {
-        align-self: flex-end;
-        margin-bottom: 0.5rem;
-      }
-
-      .nav-link {
-        font-size: 1rem;
-        padding: 0.4rem 0.8rem;
-      }
-
-      .navbar .container {
-        padding: 0.5rem 1rem;
-      }
-
-      .footer-grid {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .footer-grid > div {
-        width: 100%;
-      }
-
-      .footer-about {
-        text-align: center;
-        margin-bottom: 1rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .nav-link {
-        font-size: 0.95rem;
-      }
-
-      .navbar .bi-bag-heart-fill {
-        font-size: 1.1rem;
-      }
-
-      .quiz-box {
-        padding: 1rem;
-      }
-    }
-
-  </style>
+    .footer-top img{ max-width:200px; }
+  }
+</style>
 </head>
 <body>
 
